@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright © 2020 Substrates Authors
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+  ~ express or implied. See the License for the specific language
+  ~ governing permissions and limitations under the License.
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.humainary.substrates</groupId>
+    <artifactId>humainary-substrates-parent</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <artifactId>humainary-substrates-api</artifactId>
+  <packaging>jar</packaging>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>io.humainary.spi</groupId>
+      <artifactId>humainary-spi</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>javadoc</id>
+
+      <properties>
+        <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
+      </properties>
+
+      <build>
+
+        <pluginManagement>
+          <plugins>
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>${maven-javadoc-plugin.version}</version>
+            </plugin>
+
+          </plugins>
+        </pluginManagement>
+
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <excludePackageNames>
+                io.humainary.substrates.spi
+              </excludePackageNames>
+            </configuration>
+          </plugin>
+        </plugins>
+
+      </build>
+
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <stylesheetfile>stylesheet.css</stylesheetfile>
+              <excludePackageNames>
+                io.humainary.substrates.spi
+              </excludePackageNames>
+            </configuration>
+          </plugin>
+        </plugins>
+      </reporting>
+
+    </profile>
+
+  </profiles>
+
+</project>

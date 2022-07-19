@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright © 2022 JINSPIRED B.V.
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.humainary.substrates</groupId>
+    <artifactId>humainary-substrates-parent</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <artifactId>humainary-substrates-testkit</artifactId>
+  <packaging>jar</packaging>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>io.humainary.substrates</groupId>
+      <artifactId>humainary-substrates-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+  </dependencies>
+
+</project>
